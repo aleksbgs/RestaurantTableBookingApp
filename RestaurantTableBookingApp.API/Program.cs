@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using RestaurantTableBookingApp.Data;
+
 namespace RestaurantTableBookingApp.API
 {
     public class Program
@@ -6,8 +9,14 @@ namespace RestaurantTableBookingApp.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            var configuration = builder.Configuration;
             // Add services to the container.
+
+            builder.Services.AddDbContext<RestaurantTableBookingDbContext>(options => options
+                    .UseSqlServer(configuration.GetConnectionString("DbContext") ?? "")
+                    .EnableDetailedErrors() //should not use in production,only for development
+            );
+                
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
