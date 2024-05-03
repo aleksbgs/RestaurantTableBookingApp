@@ -12,7 +12,7 @@ using RestaurantTableBookingApp.Data;
 namespace RestaurantTableBookingApp.Data.Migrations
 {
     [DbContext(typeof(RestaurantTableBookingDbContext))]
-    [Migration("20240503130237_dbdesignchange")]
+    [Migration("20240503134127_dbdesignchange")]
     partial class dbdesignchange
     {
         /// <inheritdoc />
@@ -56,7 +56,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasIndex(new[] { "UserId" }, "IX_Reservations_UserId");
 
-                    b.ToTable("Reservation");
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Core.Restaurant", b =>
@@ -94,7 +94,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Restaurant");
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Core.RestaurantBranch", b =>
@@ -137,7 +137,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasIndex(new[] { "RestaurantId" }, "IX_RestaurantBranches_RestaurantId");
 
-                    b.ToTable("RestaurantBranche");
+                    b.ToTable("RestaurantBranches");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Core.TimeSlot", b =>
@@ -166,7 +166,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasIndex(new[] { "DiningTableId" }, "IX_TimeSlots_DiningTableId");
 
-                    b.ToTable("TimeSlot");
+                    b.ToTable("TimeSlots");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Core.User", b =>
@@ -208,7 +208,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Data.ModelTemp.DiningTable", b =>
@@ -233,7 +233,7 @@ namespace RestaurantTableBookingApp.Data.Migrations
 
                     b.HasIndex(new[] { "RestaurantBranchId" }, "IX_DiningTables_RestaurantBranchId");
 
-                    b.ToTable("DiningTable");
+                    b.ToTable("DiningTables");
                 });
 
             modelBuilder.Entity("RestaurantTableBookingApp.Core.Reservation", b =>
