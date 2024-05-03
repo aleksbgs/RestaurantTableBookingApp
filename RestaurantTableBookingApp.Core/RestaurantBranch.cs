@@ -14,17 +14,20 @@ public partial class RestaurantBranch
     public int RestaurantId { get; set; }
 
     [StringLength(100)]
+    [Required]
     public string Name { get; set; } = null!;
 
     [StringLength(200)]
+    [Required]
     public string Address { get; set; } = null!;
 
     [StringLength(20)]
+    [Required]
     public string? Phone { get; set; }
-
+    [Required]
     [StringLength(100)]
     public string? Email { get; set; }
-
+    [Required]
     [StringLength(500)]
     public string? ImageUrl { get; set; }
 
