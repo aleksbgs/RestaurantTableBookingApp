@@ -12,7 +12,7 @@ using RestaurantTableBookingApp.Data;
 namespace RestaurantTableBookingApp.Data.Migrations
 {
     [DbContext(typeof(RestaurantTableBookingDbContext))]
-    [Migration("20240503114936_dbdesignchange")]
+    [Migration("20240503130237_dbdesignchange")]
     partial class dbdesignchange
     {
         /// <inheritdoc />
