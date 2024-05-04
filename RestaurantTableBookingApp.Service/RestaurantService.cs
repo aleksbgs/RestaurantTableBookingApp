@@ -18,4 +18,18 @@ public class RestaurantService:IRestaurantService
         return await _restaurantRepository.GetAllRestaurantsAsync();
     }
 
+    public async Task<IEnumerable<RestaurantBranchModel>> GetRestaurantBranchsByRestaurantIdAsync(int restaurantId)
+    {
+        return await _restaurantRepository.GetRestaurantBranchsByRestaurantIdAsync(restaurantId);
+    }
+
+    public async Task<IEnumerable<DiningTableWithTimeSlotsModel>> GetDiningTablesByBranchAsync(int branchId, DateTime date)
+    {
+        return await _restaurantRepository.GetDiningTablesByBranchAsync(branchId, date);
+    }
+
+    public async  Task<IEnumerable<DiningTableWithTimeSlotsModel>> GetDiningTablesByBranchAsync(int branchId)
+    {
+        return await _restaurantRepository.GetDiningTablesByBranchAsync(branchId);
+    }
 }
